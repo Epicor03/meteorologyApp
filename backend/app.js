@@ -73,6 +73,7 @@ app.get('/cities', (req, res) => {
 });
 
 app.get('/city/temperatures',(req, res) => {
+  logger.info('Getting all temperatures from -' + req.query.city);
   const cityChosen = cities.find(element => element.name === req.query.city);
  // Render index page
   return res.render('chartTemp', {
