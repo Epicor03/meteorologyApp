@@ -1,0 +1,27 @@
+.style-meteo-header{
+    background-color: rgb(87, 177, 204)!important;
+    color:white;
+    font-family:fantasy;
+}
+
+.container-input{
+    max-width: 200px;
+    display: flex;
+}
+
+.filter-table-button{
+    background-color: white;
+    border: solid 1px rgb(148, 186, 197);
+    border-radius: 5px;
+}
+
+.style-table{
+    min-width: 800px;
+}
+.form-pos{
+    padding-top: 40px;
+}
+.canvas-pos{
+    padding-left: 300px;
+}
+
