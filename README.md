@@ -25,3 +25,8 @@ how to install and run:
 	
 	
 	-in browser open a page with url: localhost:4200
+	
+	
+	
+	
+-The log file is in logs diretory
