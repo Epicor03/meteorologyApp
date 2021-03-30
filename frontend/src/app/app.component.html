@@ -1,0 +1,77 @@
+
+<div class="card">
+  <div class="card-header style-meteo-header">
+   <h3>Meteo APP</h3>
+  </div>
+  <div class="card-body">
+    <div style="width: 200px;">
+      <select 
+      class="form-control form-control-lg select-size"
+      (change)="onChangeOption($event.target.value)">
+      <option selected disabled>select a city</option>
+        <option *ngFor="let city of $cities | async" value="{{city.name}}" >{{city.name}}</option>
+      </select>
+    </div>
+    
+    
+    <div class="container-input">
+      <div class="form-pos">
+
+        <table class="table style-table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name
+                <button class="filter-table-button"
+                data-toggle="tooltip" data-placement="right" title="order names"
+                ><i class="bi bi-sort-down"
+                (click)="setOrder('name')"></i></button>
+              </th>
+              <th scope="col">Temperature
+                <button class="filter-table-button"
+                data-toggle="tooltip" data-placement="right" title="order temperatures"
+                ><i class="bi bi-sort-down"
+                (click)="setOrder('temperature')"></i></button>
+              </th>
+              <th scope="col">Start day at
+                <button class="filter-table-button"
+                data-toggle="tooltip" data-placement="right" title="order hour start day"
+                ><i class="bi bi-sort-down"
+                (click)="setOrder('startDay')"></i></button>
+              </th>
+              <th scope="col">End day at
+                <button class="filter-table-button"
+                data-toggle="tooltip" data-placement="right" title="order hour finish day"
+                ><i class="bi bi-sort-down"
+                (click)="setOrder('endDay')"></i></button>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let city of $cities | async">
+              <th scope="row">{{city.id}}</th>
+              <td>{{city.name}}</td>
+              <td>{{city.temperature}}</td>
+              <td>{{city.startDay.hour  + ' ' + city.startDay.unit}}</td>
+              <td>{{city.endDay.hour  + ' ' + city.endDay.unit}}</td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+      <div class="canvas-pos">
+        <object [data]=canvasUrl
+          width="650px"
+          height="610px"
+          type="text/html">
+              Alternative Content
+          </object>
+       
+      </div>
+    </div>
+
+    
+    
+  </div>
+</div>
+
